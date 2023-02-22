@@ -1,13 +1,15 @@
 const dbConnect = require("./mongodb")
 
+const deleteData= async()=>{
 
-const deletemethod = async ()=>{
+    let data = await dbConnect()
+    let result = await data.deleteOne({name:"Shariq Rahman"})
 
-    const db = dbConnect()
-    const result = db.delete({name:"sharik rahman"})
+    console.log(result)
+    
 
 
 
 }
 
-deletemethod()
+deleteData()
